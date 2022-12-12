@@ -28,8 +28,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
@@ -46,12 +44,6 @@ import (
 	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
 )
-
-type S3Provider struct {
-	sess       *session.Session
-	uploader   *s3manager.Uploader
-	bucketName string
-}
 
 type ServiceLogs struct {
 	ServiceName   string    `json:"serviceName`
